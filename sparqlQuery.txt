@@ -1,0 +1,9 @@
+SELECT ?oblastLabel ?pop
+WHERE {
+  ?oblast wdt:P31 wd:Q3348196.
+  ?oblast wdt:P1082 ?pop.
+  
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+ORDER BY DESC(?pop)
+LIMIT 1
